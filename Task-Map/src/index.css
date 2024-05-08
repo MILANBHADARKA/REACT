@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Baloo+Bhai+2:wght@400..800&family=Fredericka+the+Great&family=Jaini&family=Jersey+25&family=Kode+Mono:wght@400..700&family=Passion+One:wght@400;700;900&family=Patua+One&family=Permanent+Marker&family=Roboto+Slab:wght@100..900&family=Russo+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@media only screen and (max-width: 1000px){
+    .navbar{
+        width: 70vw;
+    }
+
+    .main{
+        width: 70vw;
+        min-height: 60vh;
+    }
+
+    .input input{
+        width: 60vw;
+    }
+
+    .todos{
+        width: 60vw;
+    }
+    /* .todo{
+        width: 90%;
+    } */
+}
+
+@media only screen and (max-width: 450px){
+
+    .navbar{
+        width: 85vw;
+    }
+
+    .main{
+        width: 85vw;
+        min-height: 50vh;
+    }
+
+    .input input{
+        width: 75vw;
+    }
+
+    .todos{
+        width: 75vw;
+    }
+    /* .todo{
+        width: 90%;
+    } */
+}
+
