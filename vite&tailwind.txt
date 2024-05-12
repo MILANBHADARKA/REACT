@@ -1,4 +1,4 @@
-npm creaate vite@latest
+npm create vite@latest
 
 cd project name
 
