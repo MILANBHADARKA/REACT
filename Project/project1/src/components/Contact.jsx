@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import service_img from '../assets/images/service_img.svg'
 import call from '../assets/images/call.png'
 import message from '../assets/images/message.png'
@@ -8,6 +8,10 @@ import { set, useForm } from 'react-hook-form'   //react-form-hook is a library 
 
 function Contact() {
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
   const {
     register,
     handleSubmit,
@@ -16,9 +20,21 @@ function Contact() {
     formState: { errors, isSubmitting },
   } = useForm()
 
-  const onsubmit = async (data) => {
-    console.log(data)
-  } 
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(event);
+
+    setName(event.target[0].value);
+    setEmail(event.target[1].value);
+    setMessage(event.target[2].value);
+
+    event.target[0].value = '';
+    event.target[1].value = '';
+    event.target[2].value = '';
+
+  };
 
 
   return (
@@ -62,27 +78,33 @@ function Contact() {
                 </div>
 
                 <div className="form">
-                        <form action="" onSubmit={handleSubmit(onsubmit)}>
+                        <form action="" onSubmit={onSubmit}>
 
-                          <input type="text" placeholder='NAME' {...register("name", {required: {value: true, message: "Required"}, minLength: { value: 3, message: "Name Min length is 3 "},})} className='border-2 border-black rounded-lg w-[300px] p-1' />
-                          <br />
-                          {errors.name && <span className=' text-red-600'>{errors.name.message}</span>}
-                          <br />
+                          <div className='relative m-2'>
+                            <label className='absolute text-[13px] font-semibold top-[-10px] left-[10px] pr-2 pl-2  bg-white' htmlFor="name">Name</label>
+                            <input className='p-1 w-full border-[1.5px] border-black rounded-md' type="text" id='name' name='name' />
+                          </div>
 
-                          <input type="email" placeholder='EMAIL' {...register("email", {required: {value: true, message: "Required"},})} className='border-2 border-black rounded-lg w-[300px] p-1'  />
-                          <br />
-                          {errors.email && <span className=' text-red-600'>{errors.email.message}</span>}
-                          <br />
+                          <div className='relative m-2'>
+                            <label className='absolute text-[13px] font-semibold top-[-10px] left-[10px] pr-2 pl-2  bg-white' htmlFor="email">E-Mail</label>
+                            <input className='p-1 w-full border-[1.5px] border-black rounded-md' type="email" id='email' name='email' />
+                          </div>
 
-                          <input type="text" placeholder='TEXT' {...register("text", {required: {value: true, message: "Required"}, minLength: { value: 10, message: "text Min length is 10 "},})} className='border-2 border-black rounded-lg w-[300px] p-1'  />
-                          <br />
-                          {errors.text && <span className=' text-red-600'>{errors.text.message}</span>}
-                          <br />
+                          <div className='relative m-2'>
+                            <label className='absolute text-[13px] font-semibold top-[-10px] left-[10px] pr-2 pl-2  bg-white' htmlFor="message">Text</label>
+                            <textarea className='p-1 w-full border-[1.5px] border-black rounded-md' name="message" id="message" cols="30" rows="5"></textarea>
+                          </div>
 
-                          <button disabled={isSubmitting} type="submit" className='rounded-md bg-red-600 p-3'>Submit</button>   {/*we can use isSubmitting to disable the button when the form is submitting. so that the user can not submit the form multiple times.*/}
+                          <div>
+                            <button className='bg-red-600 text-white text-sm flex rounded pt-[2px] pb-[2px] pr-2 pl-2 m-2'>Submit</button>
+                          </div>
 
+                          <div>{name}</div>
+                          <div>{email}</div>
+                          <div>{message}</div>
 
-                        </form>
+                          </form>
+
                 </div>
 
           </div>
