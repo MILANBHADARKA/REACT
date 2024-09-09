@@ -11,7 +11,7 @@ import User from './components/User/User.jsx'
 import Github, {githubinfoloader} from './components/Github/Github.jsx'
 
 
-//First syntex
+//First syntax
 
 const router = createBrowserRouter([
   {
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
 ])
 
 
-//Second syntex
+//Second syntax
 
 // const router = createBrowserRouter(
 //   createRoutesFromElements(

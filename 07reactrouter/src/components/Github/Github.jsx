@@ -18,7 +18,7 @@ function Github() {
 
   return (
     <div className=' text-center m-4 bg-gray-600 text-white text-3xl'> 
-        <span className='underline'>GITHUB</span>+
+        <span className='underline'>GITHUB</span>
         <ul>
             <li>Name : {data.name}</li>
             <li>Followers : {data.followers}</li>

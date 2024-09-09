@@ -5,14 +5,7 @@ import './App.css'
 
 /*THEORY: useState
     useState is a hook that is used to create a state variable
-    useState is a hook that is used to create a state variable in a functional component
-    useState is a hook that is used to create a state variable in a functional component in react
-    useState is a hook that is used to create a state variable in a functional component in react that can be updated
-    useState is a hook that is used to create a state variable in a functional component in react that can be updated by calling a method
-    useState is a hook that is used to create a state variable in a functional component in react that can be updated by calling a method that is returned by useState
     useState is a hook that is used to create a state variable in a functional component in react that can be updated by calling a method that is returned by useState with an initial value
-    useState is a hook that is used to create a state variable in a functional component in react that can be updated by calling a method that is returned by useState with an initial value of 15
-    
 */
 
 function App() {
@@ -20,7 +13,7 @@ function App() {
   let [counter,setCounter] = useState(15)
   /*for lerning purpose
       setCounter is method that can do changies in the value of counter
-      we can give any name instede og counter and setCounter
+      we can give any name instede of counter and setCounter
       useState is a hook that is used to create a state variable
       useState(15) is used to set the initial value of the state variable
   */
@@ -36,7 +29,7 @@ function App() {
   }
 
   return (
-    <>
+    <>          //this is a fragment
       <h1>Milan</h1>
       <h2>Counter value : {counter}</h2>
 
