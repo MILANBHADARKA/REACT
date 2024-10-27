@@ -1,5 +1,5 @@
-
 import Hello from './Milan'
+import Newone from './new'
 
 function App() {
 
@@ -7,6 +7,7 @@ function App() {
     <>
     <h1>Chai or React with vite | Milan</h1>
     <Hello />
+    <Newone />
     </>
   )
 }
