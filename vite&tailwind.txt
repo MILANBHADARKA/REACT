@@ -7,11 +7,13 @@ npm i
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
+-> In tailwind.config.js add this
 content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
 
+-> In index.css add this
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
