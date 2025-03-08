@@ -1,19 +1,33 @@
-npm create vite@latest
+npm install tailwindcss @tailwindcss/vite
 
-cd project name
+->in vite.config.js
+ import tailwindcss from '@tailwindcss/vite'
 
-npm i
-
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
--> In tailwind.config.js add this
-content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+export default defineConfig({
+  plugins: [
+    tailwindcss(),                  **add this in plugins**
   ],
+})
 
--> In index.css add this
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+->in index.css
+
+@import "tailwindcss";
+
+
+
+--> now for suggestion from tailwind intellisense extension create tailwind.config.js         (no use of tailwind.config.js but only for suggestion)
+
+
+--> for custom color,font etc..
+
+inside index.css
+
+@theme {
+  --color-primary: #439274
+}
+
+(If problem refere this videos)
+installation : https://youtu.be/RjzTBfX79Cc?feature=shared
+
+custom tailwind : https://youtu.be/9Fu_SQ3ndBA?feature=shared
